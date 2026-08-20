@@ -11,10 +11,16 @@ local evasion_master_casters_mitts = {
 
 local sets = {
     Idle = {
+		Head = 'Rogue\'s Bonnet',
+		Neck = 'Bloodbead Amulet',
 		Ear1 = 'Gold Earring +1',
 		Ear2 = 'Pigeon Earring',
+		Body = 'Rogue\'s Vest',
+		Hands = 'Ogygos\'s Brc.',
+		Ring1 = 'Bomb Ring',
 		Ring2 = 'Bomb Queen Ring',
 		Waist = 'R.K. Belt +2',
+		Legs = 'Wonder Braccae',
 		Feet = 'Strider Boots',
     },
     IdleALT = {},
@@ -47,11 +53,15 @@ local sets = {
 
     TP_LowAcc = {
 		Head = 'Optical Hat',
-		Neck = 'Nanaa\'s Lucky Charm',
-		Body = 'Scorpion Harness',
+		Neck = 'Nanaa\'s Charm',
+		Ear1 = 'Cassie Earring',
+		Body = 'Rapparee Harness',
+		Hands = 'Rogue\'s Armlets',
 		Ring1 = 'Toreador\'s Ring',
 		Ring2 = 'Toreador\'s Ring',
+		Back = 'Amemet Mantle +1',
 		Waist = 'Sarashi',
+		Legs = 'Rogue\'s Culottes',
 		Feet = 'Leaping Boots',
     },
     TP_Aftermath = {},
@@ -60,66 +70,54 @@ local sets = {
     TP_NIN = {},
 
     -- Note that these sets are for naked SA/TA/SATAs without WS
-    SA = {},
-    TA = {},
-    SATA = {},
+    SA = {
+		Head = 'Emperor Hairpin',
+		Neck = 'Spike Necklace',
+		Waist = 'R.K. Belt +2',
+    },
+    TA = {
+		Head = 'Emperor Hairpin',
+		Waist = 'R.K. Belt +2',
+    },
+    SATA = {
+		Head = 'Emperor Hairpin',
+		Neck = 'Spike Necklace',
+		Waist = 'R.K. Belt +2',
+    },
 
     -- The following demonstrates layering of WS sets that should cover all debatable major WS combinations.
     WS = {
-		Head = 'Maat\'s Cap',
-		Neck = 'Love Torque',
-		Ear1 = 'Suppanomimi',
-		Ear2 = 'Brutal Earring',
-		Body = 'Dragon Harness +1',
-		Hands = { Name = 'Hct. Mittens +1', Priority = 1 },
-		Ring1 = 'Rajas Ring',
-		Ring2 = 'Adroit Ring',
-		Back = 'Forager\'s Mantle',
-		Waist = 'Warwolf Belt',
-		Legs = { Name = 'Dusk Trousers +1', Priority = 2 },
-		Feet = { Name = 'Hct. Leggings +1', Priority = 1 },
+		Head = 'Emperor Hairpin',
+		Neck = 'Spike Necklace',
+		Ear1 = 'Cassie Earring',
+		Body = 'Assault Jerkin',
+		Hands = 'Rogue\'s Armlets',
+		Ring1 = 'Puissance Ring',
+		Ring2 = 'Puissance Ring',
+		Back = 'Amemet Mantle +1',
+		Waist = 'R.K. Belt +2',
+		Legs = 'Rogue\'s Culottes',
+		Feet = 'Leaping Boots',
     },
     WS_HighAcc = {
-		Body = { Name = 'Hct. Harness +1', Priority = 2 },
-		Ring2 = { Name = 'Toreador\'s Ring', Priority = 2 },
-		Waist = 'Life Belt',
+		Body = 'Scorpion Harness',
+		Ring2 = 'Toreador\'s Ring',
     },
 
-    WS_Evisceration = {
-		Feet = { Name = 'Asn. Poulaines +1', Priority = 1 },
-    },
-    WS_DancingEdge = {
-		Feet = { Name = 'Asn. Poulaines +1', Priority = 1 },
-    },
+    WS_Evisceration = {},
+    WS_DancingEdge = {},
     WS_SharkBite = {},
-    WS_MercyStroke = {
-		Ear1 = 'Tmph. Earring +1',
-		Body = { Name = 'Hct. Harness +1', Priority = 2 },
-		Ring2 = 'Triumph Ring',
-		Waist = 'Warwolf Belt',
-    },
+    WS_MercyStroke = {},
 
     -- Applied on SA WS and SATA WS
-    WS_SA = {
-		Feet = { Name = 'Hct. Leggings +1', Priority = 1 },
-    },
+    WS_SA = {},
 
     -- Applied only on TA WS but NOT SATA WS
-    WS_TA = {
-		Ear1 = 'Drone Earring',
-        Hands = 'Rogue\'s Armlets +1',
-        Legs = 'Drn. Leggings +1',
-    },
-    WS_TA_SharkBite = {
-		Ring2 = 'Breeze Ring',
-    },
-    WS_TA_MercyStroke = {
-		Hands = { Name = 'Hct. Mittens +1', Priority = 1 },
-    },
+    WS_TA = {},
+    WS_TA_SharkBite = {},
+    WS_TA_MercyStroke = {},
 
-    WS_SATA_SharkBite = {
-        Hands = 'Rogue\'s Armlets +1',
-    },
+    WS_SATA_SharkBite = {},
 
     Flee = {
 		Feet = 'Rogue\'s Poulaines',

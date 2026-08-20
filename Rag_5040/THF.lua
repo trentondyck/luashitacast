@@ -11,11 +11,18 @@ local evasion_master_casters_mitts = {
 
 local sets = {
     Idle = {
+		Ear1 = 'Gold Earring +1',
+		Ear2 = 'Pigeon Earring',
+		Ring2 = 'Bomb Queen Ring',
+		Waist = 'Royal Knight\'s Belt +2',
 		Feet = 'Strider Boots',
     },
     IdleALT = {},
     Resting = {},
-    Town = {},
+    Town = {
+		Head = 'Shaded Spectacles',
+		Body = 'Goldsmith\'s Apron',
+    },
     Movement = {},
 
     DT = {},

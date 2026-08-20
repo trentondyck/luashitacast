@@ -39,6 +39,12 @@ local sets = {
     LockSet3 = {},
 
     TP_LowAcc = {
+		Head = 'Optical Hat',
+		Neck = 'Nanaa\'s Lucky Charm',
+		Body = 'Scorpion Harness',
+		Ring1 = 'Toreador\'s Ring',
+		Ring2 = 'Toreador\'s Ring',
+		Waist = 'Sarashi',
 		Feet = 'Leaping Boots',
     },
     TP_Aftermath = {},

@@ -11,18 +11,18 @@ local evasion_master_casters_mitts = {
 
 local sets = {
     Idle = {
-		Head = 'Rogue\'s Bonnet',
+		Head = 'Optical Hat',
 		Neck = 'Bloodbead Amulet',
 		Ear1 = 'Gold Earring +1',
 		Ear2 = 'Pigeon Earring',
-		Body = 'Rogue\'s Vest',
+		Body = 'Scorpion Harness',
 		Hands = 'Rogue\'s Armlets',
 		Ring1 = 'Bomb Ring',
 		Ring2 = 'Bomb Queen Ring',
 		Back = 'Amemet Mantle +1',
 		Waist = 'R.K. Belt +2',
 		Legs = 'Rogue\'s Culottes',
-		Feet = 'Rogue\'s Poulaines',
+		Feet = 'Strider Boots',
     },
     IdleALT = {},
     Resting = {},

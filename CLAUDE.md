@@ -138,6 +138,25 @@ The page is a JS-rendered SPA and WebFetch gets a 403. Fetch it with
 `curl -A '<browser UA>'` and grep the JS bundle at `/assets/index-*.js` for
 `platform:"ashita",status:"approved"`.
 
+## Reading the user's gear without asking them to do anything
+
+The **FindAll plugin is autoloaded** (`scripts/default.txt`) with `cachetodisc` enabled, so
+a full inventory snapshot already sits on disk at:
+
+```
+config/plugins/FindAll/cache/<Name>_<Id>.bin
+```
+
+Format: 20-byte header (16-byte name, 4-byte char id), then fixed 44-byte records;
+`<HH` at each record start is `itemId, containerIndex`. Skip ids `0` and `0xFFFF`
+(0xFFFF slot 0 is gil, count in the following uint32). Count repeats of an id to get
+quantity. Resolve ids with the `[id]={id=..,plural=".."}` table in
+`addons/simplelog/lib/res/items_grammar.lua`.
+
+Caveat: that table yields the **chat-log** name, not the short `Name[1]` a gear set needs
+— good enough to know *what* is owned, then confirm the exact string with `/lac addset`.
+The cache reflects only containers the client has loaded, as of its mtime.
+
 ## Useful commands (the user runs these in-game)
 
 `/lac reload` · `/lac load <JOB>` · `/lac unload` · `/lac addset <SetName>` ·

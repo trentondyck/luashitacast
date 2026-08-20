@@ -2,7 +2,7 @@ local horizon_safe_mode = true -- this disables some of the potentially more con
 
 local display_messages = true -- set to true if you want chat log messages to appear on any /gc command used such as DT, or KITE gear toggles
 
-local load_stylist = true -- set to true to just load stylist on game start. this is purely for convenience since putting it in scripts doesn't work
+local load_stylist = false -- set to true to just load stylist on game start. this is purely for convenience since putting it in scripts doesn't work
 
 local toggleDisplayHeadOnAbility = true
 
@@ -30,7 +30,7 @@ local skulkers_cape = {
 }
 
 -- Set this to true to confirm that actually read the README.md and set up the equipment listed above correctly
-local i_can_read_and_follow_instructions_test = false
+local i_can_read_and_follow_instructions_test = true
 
 -- Add additional equipment here that you want to automatically lock when equipping
 local LockableEquipment = {

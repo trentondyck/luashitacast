@@ -10,7 +10,9 @@ local evasion_master_casters_mitts = {
 }
 
 local sets = {
-    Idle = {},
+    Idle = {
+		Feet = 'Strider Boots',
+    },
     IdleALT = {},
     Resting = {},
     Town = {},
@@ -36,7 +38,9 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 
-    TP_LowAcc = {},
+    TP_LowAcc = {
+		Feet = 'Leaping Boots',
+    },
     TP_Aftermath = {},
     TP_Mjollnir_Haste = {},
     TP_HighAcc = {},
@@ -104,7 +108,9 @@ local sets = {
         Hands = 'Rogue\'s Armlets +1',
     },
 
-    Flee = {},
+    Flee = {
+		Feet = 'Rogue\'s Poulaines',
+    },
     Hide = {},
     Steal = {},
     Mug = {},

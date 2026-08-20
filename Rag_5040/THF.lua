@@ -30,9 +30,7 @@ local sets = {
 		Head = 'Shaded Specs.',
 		Body = 'Goldsmith\'s Apron',
     },
-    Movement = {
-		Feet = 'Strider Boots',
-    },
+    Movement = {},
 
     DT = {},
     MDT = {},

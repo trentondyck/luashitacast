@@ -118,44 +118,19 @@ patch it in binary mode; a plain `sed 's/^x = 0$/…/'` matches nothing and fail
 It is boot config, so it needs a game restart; the in-game `/ashita` settings window has
 an "Enable Silent Aliases" checkbox that applies immediately.
 
-## Server addon policy — do NOT write custom addons
+## Server addon policy — never write a custom addon
 
-HorizonXI runs an **allowlist**: <https://horizonxi.com/addons>. Only addons on the
-approved list may be used, and *"unlisted addons should be considered prohibited and the
-use of said addons is punishable."* Custom addons must be publicly hosted and submitted
-for review (~7 days) before use. One listing adds that custom **modifications** to an
-approved addon also count as a new addon needing approval.
+HorizonXI runs an allowlist (<https://horizonxi.com/addons>): unlisted addons are
+"prohibited and punishable", and modifying an approved addon makes it a new addon needing
+review. Solve problems with approved addons' existing features instead. Profiles in this
+repo are fine — they are user config, and `horizon_safe_mode = true` keeps the framework's
+automation inside the rules; leave it on.
 
-So: never write a throwaway Ashita addon to solve a problem here, however convenient.
-Use an approved addon's existing features instead — `/lac addset` covers gear capture,
-and Find / Findall / Equipmon / GearFinder / hxinv / XITools cover inventory lookup.
+## Reading the user's gear
 
-LuAshitacast **profiles** are fine — they are user config, which is the addon's purpose,
-and this repo is publicly hosted. `horizon_safe_mode = true` in `gcinclude-rag.lua`
-exists to keep the framework's automation inside the server rules; leave it on.
-
-The page is a JS-rendered SPA and WebFetch gets a 403. Fetch it with
-`curl -A '<browser UA>'` and grep the JS bundle at `/assets/index-*.js` for
-`platform:"ashita",status:"approved"`.
-
-## Reading the user's gear without asking them to do anything
-
-The **FindAll plugin is autoloaded** (`scripts/default.txt`) with `cachetodisc` enabled, so
-a full inventory snapshot already sits on disk at:
-
-```
-config/plugins/FindAll/cache/<Name>_<Id>.bin
-```
-
-Format: 20-byte header (16-byte name, 4-byte char id), then fixed 44-byte records;
-`<HH` at each record start is `itemId, containerIndex`. Skip ids `0` and `0xFFFF`
-(0xFFFF slot 0 is gil, count in the following uint32). Count repeats of an id to get
-quantity. Resolve ids with the `[id]={id=..,plural=".."}` table in
-`addons/simplelog/lib/res/items_grammar.lua`.
-
-Caveat: that table yields the **chat-log** name, not the short `Name[1]` a gear set needs
-— good enough to know *what* is owned, then confirm the exact string with `/lac addset`.
-The cache reflects only containers the client has loaded, as of its mtime.
+Run the **`ffxi-refresh-gear`** skill (`~/.claude/skills/ffxi-refresh-gear/SKILL.md`). It
+reads the inventory snapshot the FindAll plugin already writes to disk and resolves exact
+item names, so you never have to ask the user to run anything.
 
 ## Useful commands (the user runs these in-game)
 

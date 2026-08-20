@@ -118,6 +118,26 @@ patch it in binary mode; a plain `sed 's/^x = 0$/…/'` matches nothing and fail
 It is boot config, so it needs a game restart; the in-game `/ashita` settings window has
 an "Enable Silent Aliases" checkbox that applies immediately.
 
+## Server addon policy — do NOT write custom addons
+
+HorizonXI runs an **allowlist**: <https://horizonxi.com/addons>. Only addons on the
+approved list may be used, and *"unlisted addons should be considered prohibited and the
+use of said addons is punishable."* Custom addons must be publicly hosted and submitted
+for review (~7 days) before use. One listing adds that custom **modifications** to an
+approved addon also count as a new addon needing approval.
+
+So: never write a throwaway Ashita addon to solve a problem here, however convenient.
+Use an approved addon's existing features instead — `/lac addset` covers gear capture,
+and Find / Findall / Equipmon / GearFinder / hxinv / XITools cover inventory lookup.
+
+LuAshitacast **profiles** are fine — they are user config, which is the addon's purpose,
+and this repo is publicly hosted. `horizon_safe_mode = true` in `gcinclude-rag.lua`
+exists to keep the framework's automation inside the server rules; leave it on.
+
+The page is a JS-rendered SPA and WebFetch gets a 403. Fetch it with
+`curl -A '<browser UA>'` and grep the JS bundle at `/assets/index-*.js` for
+`platform:"ashita",status:"approved"`.
+
 ## Useful commands (the user runs these in-game)
 
 `/lac reload` · `/lac load <JOB>` · `/lac unload` · `/lac addset <SetName>` ·
